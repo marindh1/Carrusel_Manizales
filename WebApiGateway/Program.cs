@@ -18,15 +18,15 @@ namespace WebApiGateway
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+                webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
                 {
-                    webBuilder.UseStartup<Startup>();
-                    webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
-                    {
-                        config
-                        .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
-                        .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
-                    });
+                    config
+                    .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
+                    .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
                 });
+            });
     }
 }
