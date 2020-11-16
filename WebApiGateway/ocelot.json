@@ -1,8 +1,8 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/usuarios",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/api/Usuarios",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
