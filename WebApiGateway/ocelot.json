@@ -10,7 +10,11 @@
         }
       ],
       "UpstreamPathTemplate": "/gateway/usuarios",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ],
+      "Key": "Usuario"
     }
-  ]
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44369/"
+  }
 }
