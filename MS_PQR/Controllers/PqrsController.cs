@@ -101,6 +101,21 @@ namespace MS_PQR.Controllers
             return pqr;
         }
 
+        // GET: api/Pqrs/tipo
+        [HttpGet("tipo")]
+        public IQueryable<Pqr> GetTipoPQR([FromQuery] String tipo)
+        {
+            var pqr = _context.Pqr.Where(req => req.Tipo == tipo);
+            if (pqr != null)
+            {
+                return pqr;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         private bool PqrExists(int id)
         {
             return _context.Pqr.Any(e => e.Id == id);
