@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Gateway.WebApi.Modelo
+namespace Getawey.WebApi.Model
 {
     public class ModeloUsuario
     {

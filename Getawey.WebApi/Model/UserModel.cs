@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Gateway.WebApi.Modelo
+namespace Getawey.WebApi.Model
 {
-    public class User
+    public class UserModel
     {
         public string UserName { get; set; }
         public string Password { get; set; }

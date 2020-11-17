@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Gateway.WebApi
+namespace Getawey.WebApi
 {
     public class Program
     {
@@ -22,7 +22,8 @@ namespace Gateway.WebApi
                 {
                     webBuilder.UseStartup<Startup>();
                 })
-            .ConfigureAppConfiguration((hostingContext, config) => {
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
                 config
                 .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
                 .AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
