@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -41,7 +42,7 @@ namespace MS_Usuarios.Controllers
             return usuarios;
         }
 
-
+        [AllowAnonymous]
         [HttpGet("login/{user}/{password}")]
         public  IQueryable<Usuarios> GetUsuarioLogin(string user, string password) {
             var usuarios = _context.Usuarios.Where(usu => usu.Correo == user && usu.Clave == password);

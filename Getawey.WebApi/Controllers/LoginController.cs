@@ -33,6 +33,7 @@ namespace Getawey.WebApi.Controllers
             _config = config;
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Login(UserModel login) {
             IActionResult response = Unauthorized();

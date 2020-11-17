@@ -11,7 +11,12 @@
         }
       ],
       "UpstreamPathTemplate": "/usu/{url}",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      //"UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "Key":  "User",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      }
     },
     //Conexion al microservicio de Facturas
     {
@@ -24,7 +29,12 @@
         }
       ],
       "UpstreamPathTemplate": "/ft/{url}",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      //"UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "Key": "Facturas",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      }
     },
     //Conexion al micorser vicio de Insumos
     {
@@ -37,7 +47,12 @@
         }
       ],
       "UpstreamPathTemplate": "/in/{url}",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      //"UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "Key": "Insumos",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      }
     },
     //Conexion al micorservicio de Seguimiento de Pedidos
     {
@@ -50,7 +65,12 @@
         }
       ],
       "UpstreamPathTemplate": "/seg/{url}",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      //"UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "Key": "SeguimientoPedidos",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      }
     },
     //Conexion al micorservicio de PQR
     {
@@ -63,7 +83,12 @@
         }
       ],
       "UpstreamPathTemplate": "/pqr/{url}",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      //"UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "Key": "PQR",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      }
     }
   ]
 }

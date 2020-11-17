@@ -36,8 +36,9 @@ namespace Getawey.WebApi
             });
             services.AddControllers();
 
+            
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
+                .AddJwtBearer("TestKey", options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
@@ -50,6 +51,7 @@ namespace Getawey.WebApi
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                     };
                 });
+
             services.AddMvc();
             services.AddOcelot();
         }

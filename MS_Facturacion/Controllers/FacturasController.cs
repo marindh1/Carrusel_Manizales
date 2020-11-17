@@ -41,6 +41,23 @@ namespace MS_Facturacion.Controllers
             return factura;
         }
 
+        [HttpGet("PorUsuario/{usu}")]
+        public IQueryable<Factura> GetFacturaUsuario(string usu) {
+            return _context.Factura.Where(f => f.IdCliente == usu);
+        }
+
+        [HttpGet("PorNoFactura/{nro}")]
+        public IQueryable<Factura> GetFacturaNumero(int nro)
+        {
+            return _context.Factura.Where(f => f.NroFactura == nro);
+        }
+
+        [HttpGet("PorEstado/{estado}")]
+        public IQueryable<Factura> GetFacturaEstado(string estado)
+        {
+            return _context.Factura.Where(f => f.Estado.Descripcion == estado);
+        }
+
         // PUT: api/Facturas/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
@@ -79,6 +96,8 @@ namespace MS_Facturacion.Controllers
         [HttpPost]
         public async Task<ActionResult<Factura>> PostFactura(Factura factura)
         {
+            var max = _context.Factura.Max(c => c.Id);
+            factura.Id = max + 1;
             _context.Factura.Add(factura);
             try
             {
